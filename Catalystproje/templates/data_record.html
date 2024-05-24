@@ -1,0 +1,18 @@
+
+{% comment %} {% extends "generic.html" %} {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Data Record List</title>
+</head>
+<body>
+      <h1>Data Record List</h1>
+      <ul>
+            {% for record in records %}
+                  <li>{{ record.keyword }} - {{ record.city }} - {{ record.employees_from }} - {{ record.industry }} - {{ record.state }} - {{ record.employees_to }} - {{ record.year_founded }} - {{ record.country }}</li>
+            {% endfor %}
+      </ul>
+      <a href="{% url 'add_data' %}">Add New Record</a>
+</body>
+</html>
+{% comment %} {% endblock %} {% endcomment %}

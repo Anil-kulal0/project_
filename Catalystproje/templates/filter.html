@@ -1,0 +1,21 @@
+
+
+{% extends "generic.html" %}
+{% block content %}
+<h2>Filter Data</h2>
+<form method="get">
+      {{ form.as_p }}
+      <button type="submit">Filter</button>
+</form>
+{% if results %}
+<h3>Results</h3>
+<p>{{ results.count }} records found</p>
+<ul>
+      {% for record in results %}
+      <li>{{ record.keyword }} - {{ record.city }} - {{ record.employees_from }} - {{ record.industry }} - {{ record.state }} - {{ record.employees_to }} - {{ record.year_founded }} - {{ record.country }}</li>
+      {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+
